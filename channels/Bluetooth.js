@@ -6,7 +6,7 @@ module.exports = class Bluetooth {
       if (state == 'poweredOn') {
         noble.startScanning()
       } else {
-        console.log("not powered on:", state)
+        console.log('not powered on:', state)
       }
     })
 

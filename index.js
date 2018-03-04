@@ -1,9 +1,11 @@
 let Extension = require('@iotame/api').Extension
-let Action = require('@iotame/api').Action
 
 module.exports = class extends Extension {
   devices () {
-    return {}
+    return {
+      light: require('./devices/Light'),
+      thermostat: require('./devices/Thermostat')
+    }
   }
 
   channels () {
@@ -13,15 +15,14 @@ module.exports = class extends Extension {
   }
 
   protocols () {
-    return {}
+    return {
+      'lights.yeelight': require('./protocols/lights/Yeelight'),
+      'thermostats.eq3': require('./protocols/thermostats/eQ-3'),
+      'thermostats.nest': require('./protocols/thermostats/Nest')
+    }
   }
 
   hooks () {
-    return [
-      (new Action()).on('devicemanager.greeting').do(() => {
-        console.log('Hi from builtins plugin') 
-      })
-    ]
+    return []
   }
 }
-
