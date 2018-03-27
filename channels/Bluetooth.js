@@ -3,7 +3,7 @@ module.exports = class Bluetooth {
     let noble = require('noble')
 
     noble.on('stateChange', (state) => {
-      if (state == 'poweredOn') {
+      if (state === 'poweredOn') {
         noble.startScanning()
       } else {
         console.log('not powered on:', state)
