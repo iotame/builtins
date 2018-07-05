@@ -11,7 +11,7 @@ module.exports = class Bluetooth {
     })
 
     noble.on('discover', (peripheral) => {
-      // console.log(peripheral)
+      console.log(peripheral)
     })
   }
 

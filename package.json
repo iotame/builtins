@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/iotame/builtins#readme",
   "dependencies": {
-    "@iotame/api": ">=0.0.1"
+    "@iotame/api": ">=0.0.1",
+    "noble": "^1.9.1"
   },
   "devDependencies": {
     "eslint-config-standard": "^11.0.0",
